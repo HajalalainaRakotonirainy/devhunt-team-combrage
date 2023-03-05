@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Logout from "@mui/icons-material/Logout";
 import PersonIcon from "@mui/icons-material/Person";
+import { useAuth } from "../hooks/useAuth";
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -31,6 +32,16 @@ function Navbar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
+
+  const { logout } = useAuth();
+
+  const onLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
@@ -194,7 +205,7 @@ function Navbar() {
                 <PersonIcon />
                 <Typography textAlign="center">Profile</Typography>
               </MenuItem>
-              <MenuItem onClick={handleCloseUserMenu}>
+              <MenuItem onClick={onLogout}>
                 <Logout />
                 <Typography textAlign="center">Logout</Typography>
               </MenuItem>

@@ -10,6 +10,8 @@ import { Fab, Fade, Modal, TextField, Typography } from "@mui/material";
 import Navbar from "./Navbar";
 import { Button } from "@mui/material";
 import { styled } from "@mui/system";
+import axiosInstance from "../services/axios";
+import { toast, ToastContainer } from "react-toastify";
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -100,15 +102,50 @@ export default function ElevateAppBar(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(`Title: ${title}`);
-    console.log(`Description: ${description}`);
-    // Ajouter le code pour envoyer la question
+    try {
+      const response = await axiosInstance.get("/users/me");
+      const data = {
+        titre: title,
+        description: description,
+        user_id: response.data.user_id,
+        reponse: false,
+      };
+      axiosInstance
+        .post("/question/create", data)
+        .then((res) => {
+          toast.success("Question posée avec succés !", {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          toast.error(err.response, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        });
+    } catch (error) {
+      alert(error);
+    }
+
     setOpen(false);
   };
   return (
     <React.Fragment>
+      <ToastContainer />
       <CssBaseline />
       <ElevationScroll {...props}>
         <Navbar />
