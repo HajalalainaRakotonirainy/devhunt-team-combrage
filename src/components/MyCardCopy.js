@@ -13,18 +13,22 @@ import QuestionPage from "./QuestionPage";
 import Reponse from "./Reponse";
 import PersonIcon from "@mui/icons-material/Person";
 
-const MyCard = ({ title, description, id, date }) => {
+const MyCardCopy = ({ title, description, id, date }) => {
   return (
     <Card sx={{ marginBottom: "10px" }}>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <div>
             <Box display="flex" alignItems="center">
-              <Avatar sx={{ backgroundColor: "#ff8a65", color: "#fff", mr: 1 }}>
-                <PersonIcon />
-              </Avatar>
-              <Typography fontWeight="bold" marginRight="10px">{title}</Typography>
-              <Typography>{"le "+new Date(date).toLocaleDateString()+" à "+new Date(date).toLocaleTimeString()}</Typography>
+              <Typography fontWeight="bold" marginRight="10px">
+                {title}
+              </Typography>
+              <Typography>
+                {"le " +
+                  new Date(date).toLocaleDateString() +
+                  " à " +
+                  new Date(date).toLocaleTimeString()}
+              </Typography>
             </Box>
             <Typography style={{ marginBottom: "1rem" }}>
               {description}
@@ -40,4 +44,4 @@ const MyCard = ({ title, description, id, date }) => {
   );
 };
 
-export default MyCard;
+export default MyCardCopy;

@@ -5,8 +5,9 @@ import MyCard from "./MyCard";
 import axiosInstance from "../services/axios";
 import { ToastContainer } from "react-toastify";
 import PaginationCard from "./Pagination";
+import MyCardCopy from "./MyCardCopy";
 
-function Question() {
+function QuestionCopy() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const isMounted = useRef(false);
@@ -64,7 +65,7 @@ function Question() {
       >
         <ToastContainer />
         <Typography variant="h5" mb={3}>
-          Liste des questions
+          Liste des questions posé
         </Typography>
         <Box mb={2}>
           <input
@@ -96,7 +97,7 @@ function Question() {
               )
               .map((question) => (
                 <div key={question.question_id}>
-                  <MyCard
+                  <MyCardCopy
                     id={question.question_id}
                     title={question.titre}
                     description={question.description}
@@ -121,4 +122,4 @@ function Question() {
   );
 }
 
-export default Question;
+export default QuestionCopy;

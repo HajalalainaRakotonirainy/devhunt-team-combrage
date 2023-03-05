@@ -1,5 +1,9 @@
 import React from "react";
-import { Grid, Card, CardContent, Typography } from "@mui/material";
+import { Grid, Card, CardContent, Typography, Box } from "@mui/material";
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import FacebookIcon from '@mui/icons-material/Facebook';
 import Navbar from "./Navbar";
 
 function Contact() {
@@ -8,7 +12,7 @@ function Contact() {
       <Navbar />
       <Grid
         container
-        spacing={4}
+        spacing={1}
         sx={{ justifyContent: "center", alignItems: "center", height: "100vh" }}
       >
         <Grid item xs={12}>
@@ -26,20 +30,55 @@ function Contact() {
           <Card sx={{ maxWidth: 345 }}>
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                John Doe
+                RAVELOSAONA John Arnoud
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Adresse e-mail: johndoe@example.com
+              <Box display="flex" alignItems="center">
+                <EmailIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">johnarnoud35@gmail.com</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <PhoneIcon color="success" sx={{ mr: 1 }} />
+                <Typography variant="body1">034 15 515 88</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <GitHubIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">Arnoud35</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <FacebookIcon color="primary" sx={{ mr: 1 }} />
+                <Typography variant="body1">John Arnoud</Typography>
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          md={4}
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
+          <Card sx={{ width: 345 }}>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                SAMBO Tsimagnova
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Numéro de téléphone: +1 123 456 7890
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Compte GitHub: @johndoe
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Nom Facebook: John Doe
-              </Typography>
+              <Box display="flex" alignItems="center">
+                <EmailIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">tsimagnova@gmail.com</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <PhoneIcon color="success" sx={{ mr: 1 }} />
+                <Typography variant="body1">034 19 317 83</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <GitHubIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">Tsimagnova</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <FacebookIcon color="primary" sx={{ mr: 1 }} />
+                <Typography variant="body1">Fazio Sam's Bateau</Typography>
+              </Box>
             </CardContent>
           </Card>
         </Grid>
@@ -53,20 +92,24 @@ function Contact() {
           <Card sx={{ maxWidth: 345 }}>
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                Jane Doe
+                RAKOTONIRAINY Hajalalaina
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Adresse e-mail: janedoe@example.com
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Numéro de téléphone: +1 123 456 7890
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Compte GitHub: @janedoe
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Nom Facebook: Jane Doe
-              </Typography>
+              <Box display="flex" alignItems="center">
+                <EmailIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">rakotonirainyhajalalaina@gmail.com</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <PhoneIcon color="success" sx={{ mr: 1 }} />
+                <Typography variant="body1">034 68 810 23</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <GitHubIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">Hajalalaina</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <FacebookIcon color="primary" sx={{ mr: 1 }} />
+                <Typography variant="body1">RAKOTONIRAINY Hajalalaina</Typography>
+              </Box>
             </CardContent>
           </Card>
         </Grid>
@@ -80,20 +123,24 @@ function Contact() {
           <Card sx={{ maxWidth: 345 }}>
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                Alex Smith
+                RANDRIAMORAZATRA Hery Fleurio
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Adresse e-mail: alexsmith@example.com
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Numéro de téléphone: +1 123 456
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Compte GitHub: @alexsmith
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Nom Facebook: Alex Smith
-              </Typography>
+              <Box display="flex" alignItems="center">
+                <EmailIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">randriamorazatraheryfleurio@gmail.com</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <PhoneIcon color="success" sx={{ mr: 1 }} />
+                <Typography variant="body1">034 08 328 90</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <GitHubIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">HeryFleurio</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <FacebookIcon color="primary" sx={{ mr: 1 }} />
+                <Typography variant="body1">Hery Fleurio</Typography>
+              </Box>
             </CardContent>
           </Card>
         </Grid>
@@ -107,47 +154,24 @@ function Contact() {
           <Card sx={{ maxWidth: 345 }}>
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                Sarah Johnson
+                RAKOTONIRINA Mickaël Yannick
               </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Adresse e-mail: sarahjohnson@example.com
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Numéro de téléphone: +1 123 456 7890
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Compte GitHub: @sarahjohnson
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Nom Facebook: Sarah Johnson
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          sm={6}
-          md={4}
-          sx={{ display: "flex", justifyContent: "center" }}
-        >
-          <Card sx={{ maxWidth: 345 }}>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                David Lee
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Adresse e-mail: davidlee@example.com
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Numéro de téléphone: +1 123 456 7890
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Compte GitHub: @davidlee
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                Nom Facebook: David Lee
-              </Typography>
+              <Box display="flex" alignItems="center">
+                <EmailIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">nickkise27@gmail.com</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <PhoneIcon color="success" sx={{ mr: 1 }} />
+                <Typography variant="body1">034 65 007 81</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <GitHubIcon sx={{ mr: 1 }} />
+                <Typography variant="body1">MikeYannick</Typography>
+              </Box>
+              <Box display="flex" alignItems="center">
+                <FacebookIcon color="primary" sx={{ mr: 1 }} />
+                <Typography variant="body1">Yannick Vivaldi</Typography>
+              </Box>
             </CardContent>
           </Card>
         </Grid>

@@ -7,6 +7,7 @@ import QuestionHistory from "./components/QuestionHistory";
 import QuestionPage from "./components/QuestionPage";
 import Contact from "./components/Contact";
 import Accueil from "./components/Accueil";
+import AllQuestionCopy from "./components/AllQuestionCopy";
 import { AuthProvider, AuthConsumer } from "./context/JWTAuthContext";
 import { PublicRoute } from "./components/Auth/PublicRoute";
 import { Authenticated } from "./components/Auth/Authenticated"
@@ -26,7 +27,7 @@ function App() {
         <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
         <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
         <Route path="/allQuestion" element={<Authenticated><AllQuestion /></Authenticated>} />
-        <Route path="/questionHistory" element={<Authenticated><QuestionHistory /></Authenticated>} />
+        <Route path="/questionHistory" element={<Authenticated><AllQuestionCopy /></Authenticated>} />
         <Route path="/questionPage" element={<Authenticated><QuestionPage /></Authenticated>} />
         <Route path="/contact" element={<Authenticated><Contact /></Authenticated>} />
         <Route path="/" element={<Authenticated><Accueil/></Authenticated>} />
