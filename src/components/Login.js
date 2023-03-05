@@ -17,10 +17,11 @@ export default function SignInSide() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
+    let donne = {
+      username: data.get("username"),
       password: data.get("password"),
-    });
+    };
+    console.log(donne);
   };
 
   return (
@@ -70,7 +71,7 @@ export default function SignInSide() {
                 required
                 fullWidth
                 id="matricule_id"
-                label="Username"
+                label="Matricule"
                 name="username"
                 autoComplete="matricule_id"
                 autoFocus
@@ -101,7 +102,7 @@ export default function SignInSide() {
                   </Link>
                 </Grid>
               </Grid>
-              <Footer/>
+              <Footer />
             </Box>
           </Box>
         </Grid>

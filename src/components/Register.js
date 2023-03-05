@@ -2,6 +2,7 @@ import { useState } from "react";
 import { TextField, Button, Box, Typography, Link } from "@mui/material";
 import Footer from "./Footer";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 function Register() {
   const [formValues, setFormValues] = useState({
@@ -14,9 +15,47 @@ function Register() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:8000/api/v1/users/create", formValues).then((res)=>{
-        console.log(res.data);
-    })
+    axios
+      .post("http://localhost:8000/api/v1/users/create", formValues)
+      .then((res) => {
+        toast.success("Compte crée avec succés !", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        e.target.reset();
+        setFormValues({
+          matricule: "",
+          role: 0,
+          first_name: "",
+          last_name: "",
+          password: "",
+        });
+      })
+      .catch((error) => {
+        toast.error(error.response.data.detail, {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        e.target.reset();
+        setFormValues({
+          matricule: "",
+          role: 0,
+          first_name: "",
+          last_name: "",
+          password: "",
+        });
+        // logs the error response data
+      });
     // Do something with the form data
   };
 
@@ -105,6 +144,7 @@ function Register() {
         </Typography>
         <Footer />
       </Box>
+      <ToastContainer />
     </Box>
   );
 }
