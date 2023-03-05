@@ -9,6 +9,11 @@ class QuestionService:
     async def list_questions(user: User) -> List[Question]:
         questions = await Question.find(Question.owner.id == user.id).to_list()
         return questions
+
+    @staticmethod
+    async def list_all_questions() -> List[Question]:
+        questions = await Question.find().to_list()
+        return questions
     
     @staticmethod
     async def create_question(user: User, data: QuestionCreate) -> Question:

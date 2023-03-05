@@ -14,6 +14,10 @@ question_router = APIRouter()
 async def list(current_user: User = Depends(get_current_user)):
     return await QuestionService.list_questions(current_user)
 
+@question_router.get('/all', summary="Get all questions", response_model=List[QuestionOut])
+async def list_all (current_user: User = Depends(get_current_user)):
+    return await QuestionService.list_all_questions()
+
 @question_router.get('/search/{titre}', summary="Get all search questions", response_model=List[QuestionOut])
 async def list(titre: str, current_user: User = Depends(get_current_user)):
     return await QuestionService.retrieve_question_by_titre(current_user, titre)

@@ -8,7 +8,7 @@ from typing import Optional
 class User(Document):
     user_id: UUID = Field(default_factory=uuid4)
     matricule: Indexed(str, unique=True)
-    email: Optional[Indexed(EmailStr, unique=True)]
+   # email: Optional[Indexed(EmailStr, unique=True)]
     role: float
     hashed_password: str
     first_name: str

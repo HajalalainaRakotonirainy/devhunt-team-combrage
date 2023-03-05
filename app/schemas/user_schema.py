@@ -17,7 +17,6 @@ class UserUpdate(BaseModel):
 class UserOut(BaseModel):
     user_id: UUID
     matricule: str
-    email: EmailStr
     role: int
     first_name: str
     last_name: str
