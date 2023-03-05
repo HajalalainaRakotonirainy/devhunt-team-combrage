@@ -70,8 +70,8 @@ export default function SignInSide() {
                 required
                 fullWidth
                 id="matricule_id"
-                label="Numéro matricule"
-                name="matricule_id"
+                label="Username"
+                name="username"
                 autoComplete="matricule_id"
                 autoFocus
               />

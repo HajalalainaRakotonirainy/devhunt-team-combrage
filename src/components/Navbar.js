@@ -55,7 +55,7 @@ function Navbar() {
             <Typography
               component="img"
               src="./img/logo.png"
-              height="80px"
+              height="50px"
               width="150px"
             ></Typography>
           </Typography>
